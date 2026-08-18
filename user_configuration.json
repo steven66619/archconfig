@@ -1,3 +1,42 @@
+{
+  "additional-repositories": [
+    "multilib"
+  ],
+  "audio": {
+    "audio": "pipewire"
+  },
+  "bootloader": "systemd-boot",
+  "clock_zone": "Europe/London",
+  "config_version": "4.0.0",
+  "debug": false,
+  "disk_encryption": null,
+  "disks": [
+    {
+      "device": "/dev/nvme0n1",
+      "wipe": true,
+      "partitions": [
+        {
+          "boot": true,
+          "size": "512MiB",
+          "start": "1MiB",
+          "type": "primary",
+          "filesystem": {
+            "format": "vfat",
+            "mountpoint": "/boot"
+          }
+        },
+        {
+          "size": "100%",
+          "start": "513MiB",
+          "type": "primary",
+          "filesystem": {
+            "format": "ext4",
+            "mountpoint": "/"
+          }
+        }
+      ]
+    }
+  ],
   "extraPackages": [
     "xorg-server",
     "lightdm",
@@ -7,11 +46,14 @@
     "i3-wm",
     "i3lock",
     "i3status",
+    "alacritty",
     "picom",
     "dunst",
     "feh",
     "nemo",
     "nemo-fileroller",
+    "unzip",
+    "unrar",
     "git",
     "neovim",
     "fastfetch",
@@ -31,3 +73,26 @@
     "steam",
     "gamemode"
   ],
+  "hostname": "vivobook-x512da",
+  "kernels": [
+    "linux"
+  ],
+  "keyboard-layout": "gb",
+  "locale_config": {
+    "LANG": "en_GB.UTF-8"
+  },
+  "mirror-region": [
+    "United Kingdom"
+  ],
+  "network_config": {
+    "type": "NetworkManager"
+  },
+  "ntp": true,
+  "profile": {
+    "main": "Minimal"
+  },
+  "swap": true,
+  "sys-gui": null,
+  "version": "4.0.0"
+}
+
